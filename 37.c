@@ -8,7 +8,6 @@ int main() {
     scanf("%d", &n);
 
     int vetorA[n];
-    int vetorB[n];
 
     for (int i = 0; i < n; i++) {
         scanf("%d", &vetorA[i]);
