@@ -2,29 +2,30 @@
 
 int main() {
 
+    // vetor a - 11 22 33
+
+    // vetor b - 33 22 11
+
     int n = 0;
 
     scanf("%d", &n);
 
-    int ordenados[n];
-    int reversos[n];
+    int vetorA[n];
+    int vetorB[n];
 
     for (int i = 0; i < n; i++) {
-        scanf("%d", &ordenados[i]);
+        scanf("%d", &vetorA[i]);
     }
 
-    // 33 11 22
+    int k = n - 1;
 
-    int x = 0;
-    int y = n - 1;
-
-    for (int j = y; j > 0; j--) {
-        reversos[x] = ordenados[j];
-        x++;
+    for (int j = 0; j < n; j++) {
+        vetorB[j] = vetorA[k];
+        k--;
     }
 
-    for (int i = 0; i < n; i++) {
-        printf("%d ", reversos[i]);
+    for (int x = 0; x < n; x++) {
+        printf("%d ", vetorB[x]);
     }
 
     return 0;

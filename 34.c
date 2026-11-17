@@ -21,7 +21,6 @@ int main() {
         printf("sim");
 
     } else {
-
         printf("nao");
     }
 
