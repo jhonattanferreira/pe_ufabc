@@ -2,10 +2,6 @@
 
 int main() {
 
-    // vetor a - 11 22 33
-
-    // vetor b - 33 22 11
-
     int n = 0;
 
     scanf("%d", &n);
