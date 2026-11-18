@@ -6,20 +6,20 @@ int main() {
 
     scanf("%d", &n);
 
-    int vetorA[n];
-    int vetorMaior[1];
+    int vetora[n];
+    int vetormaior[1];
 
     for (int i = 0; i < n; i++) {
-        scanf("%d", &vetorA[i]);
+        scanf("%d", &vetora[i]);
     }
 
     for (int i = 0; i < n - 1; i++) {
-        if (vetorA[i] >= vetorA[i + 1]) {
-            vetorMaior[0] = vetorA[i];
+        if (vetora[i] >= vetora[i + 1]) {
+            vetormaior[0] = vetora[i];
         }
     }
 
-    printf("%d", vetorMaior[0]);
+    printf("%d", vetormaior[0]);
 
     return 0;
 }
