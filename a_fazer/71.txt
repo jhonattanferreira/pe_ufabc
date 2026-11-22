@@ -1,0 +1,60 @@
+71-troca.c
+
+Troca (Swap)
+
+Implemente uma função em C que receba dois inteiros e troque seus valores entre si (swap).
+
+A troca deve ser feita utilizando ponteiros, ou seja, a função deve modificar diretamente os valores das variáveis originais.
+
+Implemente a função:
+void swap(int *a, int *b);
+
+ 
+
+Entrada
+
+A entrada consiste em dois inteiros x e y.
+
+Saída
+
+Imprima os valores de x e y após a troca.
+
+Exemplo1
+
+Entrada: 
+3 5
+
+Saída:
+5 3
+
+Exemplo2
+
+Entrada: 
+10 10
+
+Saída:
+10 10
+
+Exemplo3
+
+Entrada: 
+0 7
+
+Saída:
+7 0
+
+Exemplo4
+
+Entrada: 
+-2 8
+
+Saída:
+8 -2
+
+Exemplo5
+
+Entrada: 
+-5 -10
+
+Saída:
+-10 -5

@@ -1,0 +1,115 @@
+68-caminhoSoma.c
+
+Caminho Soma Simples
+
+Dada uma matriz de inteiros com N linhas e M colunas, calcule a soma dos valores ao longo de um caminho que começa no canto superior esquerdo (0,0) e termina no canto inferior direito (N-1, M-1).
+
+Regras do caminho:
+- Você começa na posição (0,0);
+- Em cada passo, pode mover: para a direita (i, j+1), para baixo (i+1, j);
+- Sempre que visitar uma célula, seu valor deve ser somado;
+- O caminho é determinístico: siga sempre a regra abaixo.
+
+Regra de escolha (importante), em cada passo:
+- Se for possível mover para direita e para baixo: escolha a célula com maior valor;
+- Se houver empate: escolha mover para a direita;
+- Se só houver um movimento possível: siga por ele.
+
+ 
+
+Entrada
+
+A entrada é composta por dois inteiros N e M — dimensões da matriz.
+Em seguida, N linhas com M inteiros cada, representando a matriz.
+
+Saída
+
+Imprima um único inteiro correspondente à soma dos valores do caminho percorrido.
+
+Restrições: 1 <= N, M <= 100.
+Os elementos da matriz são inteiros.
+
+No exemplo 1, caminho:
+- (0,0)=1
+- compara: direita=2, baixo=3 -> escolhe 3
+- depois só pode ir direita -> 4
+
+Exemplo1
+
+Entrada: 
+2 2
+1 2
+3 4
+
+Saída:
+8
+
+No exemplo 2, caminho:
+- (0,0)=1
+- direita=5, baixo=5 -> empate -> vai direita
+- depois desce -> 1
+
+Exemplo2
+
+Entrada: 
+2 2
+1 5
+5 1
+
+Saída:
+7
+
+Exemplo3
+
+Entrada: 
+1 4
+10 20 30 40
+
+Saída:
+100
+
+Exemplo4
+
+Entrada: 
+4 1
+5
+6
+7
+8
+
+Saída:
+26
+
+No exemplo 5, caminho:
+- (0,0) = -1
+- direita=-2, baixo=-4 -> escolhe -2
+- direita=-3, baixo=-5 -> escolhe -3
+- depois desce -> -6
+
+Exemplo5
+
+Entrada: 
+2 3
+-1 -2 -3
+-4 -5 -6
+
+Saída:
+-12
+
+No exemplo 6, caminho:
+- (0,0)=1
+- direita=2, baixo=4 -> desce 4
+- direita=1, baixo=1 -> empate -> direita 1
+- direita=2, baixo=5 -> desce 5
+- direita=1 -> fim 1
+
+Exemplo6
+
+Entrada: 
+3 3
+1 2 3
+4 1 2
+1 5 1
+
+Saída:
+12

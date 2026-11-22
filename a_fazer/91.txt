@@ -1,0 +1,70 @@
+91-racionaisStruct.c
+
+(Fonte: Exercício do prof. Monael Ribeiro Pinheiro.)
+
+Descrição
+
+Número racional é todo o número que pode ser representado por uma razão (ou fração) entre dois números inteiros.
+O conjunto dos números racionais (representado por Q) é definido por:
+
+Em outras palavras, o conjunto dos números racionais é formado por todos os quocientes de números inteiros a e b, em que b é não nulo.
+O uso da letra "Q" é derivado da palavra inglesa quotient, cujo significado é quociente, já que a forma de escrever um número racional é o quociente de dois números inteiros. 
+
+São exemplos de números racionais:
+
+Faça um programa que defina um novo tipo de dado através de uma estrutura chamada tRacional, com os componentes inteiros numerador e denominador, conforme a definição anterior.
+Escreva as seguintes funções para operar sobre o novo tipo:
+
+Protótipo                                                             Descrição
+
+struct tRacional racional(int, int);                     Recebe dois inteiros numerador e
+                                                                             denominador e retorna o racional
+
+struct tRacional negativo(struct tRacional);   Recebe um racional e retorna o seu negativo.
+
+struct tRacional soma(struct tRacional, struct tRacional); Recebe dois racionais e retorna a
+                                                                                                  adição de ambos.
+
+struct tRacional multiplica(struct tRacional, struct tRacional); Recebe dois racionais e retorna o
+                                                                                                produto de ambos.
+
+struct tRacional divide(struct tRacional, struct tRacional); Recebe dois racionais e retorna o
+                                                                                              quociente de ambos.
+
+struct tRacional reduz(struct tRacional);         Recebe um racional e reduz a
+                                                                             fração ao máximo.
+
+Entrada
+
+A entrada consiste de várias linhas no seguinte formato: n1 d1 operação n2 d2, onde: 
+-10000 ≤ n1, n2 ≤ 10000, 0 < d1, d2 ≤ 10000.
+E operação será um dos seguintes caracteres: +, -, * ou /.
+A entrada termina com EOF.
+
+Saída
+
+A saída consiste de várias linhas com o resultado da operação sobre os racionais.
+É necessário reduzir a fração ao máximo.
+Após a impressão do último resultado quebre uma linha.
+
+Exemplo
+
+Entrada:
+1 5 + 2 10
+2 3 + 5 7
+17 24 - 5 6
+8 3 * 4 3
+-5 2 * 4 3
+8 3 / 4 3
+2 3 / 2 5
+353 7545 / -272 1983
+
+Saída: 
+2 5
+29 21
+-1 8
+32 9
+-10 3
+2 1
+5 3
+-233333 684080

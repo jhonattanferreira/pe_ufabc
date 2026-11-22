@@ -1,0 +1,66 @@
+75-stringManual.c
+
+String Manual (char*)
+
+Implemente, sem utilizar funções da biblioteca <string.h>, uma função que calcule o comprimento de uma string (número de caracteres antes do '\0').
+
+A string deve ser manipulada usando ponteiros (char*).
+
+Implemente a função:
+int comprimento(char *s);
+
+- s é um ponteiro para char (string)
+- A função deve retornar o número de caracteres antes do terminador '\0'
+
+ Restrições:
+- A string pode ter até 1000 caracteres
+- Pode conter letras, números e símbolos
+- Não pode conter espaços
+
+Entrada
+
+Uma linha contendo uma string.
+
+Saída
+
+Imprima um único inteiro correspondente ao comprimento da string.
+
+Exemplo1
+
+Entrada: 
+abc
+
+Saída:
+3
+
+Exemplo2
+
+Entrada: 
+programacao
+
+Saída:
+11
+
+Exemplo3
+
+Entrada: 
+abc123
+
+Saída:
+6
+
+Exemplo4
+
+Entrada: 
+ola_mundo
+
+Saída:
+9
+
+Exemplo5
+
+Entrada: 
+a!@#$
+
+Saída:
+5

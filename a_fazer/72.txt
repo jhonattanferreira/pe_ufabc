@@ -1,0 +1,60 @@
+72-somaPonteiros.c
+
+Soma via Ponteiros
+
+Implemente uma função em C que receba dois inteiros e calcule sua soma, armazenando o resultado em uma variável apontada por um ponteiro.
+
+A função não deve retornar o valor diretamente, mas sim modificar o conteúdo de uma variável passada por referência.
+
+Implemente a função:
+void soma(int a, int b, int *resultado);
+
+ 
+
+Entrada
+
+A entrada consiste em dois inteiros a e b.
+
+Saída
+
+Imprima o valor da soma a+b.
+
+Exemplo1
+
+Entrada: 
+3 5
+
+Saída:
+8
+
+Exemplo2
+
+Entrada: 
+10 10
+
+Saída:
+20
+
+Exemplo3
+
+Entrada: 
+0 7
+
+Saída:
+7
+
+Exemplo4
+
+Entrada: 
+-2 8
+
+Saída:
+6
+
+Exemplo5
+
+Entrada: 
+-5 -10
+
+Saída:
+-15

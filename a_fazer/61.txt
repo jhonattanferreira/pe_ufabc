@@ -1,0 +1,36 @@
+61-diagonalSecundaria.c
+
+Diagonal Secundária
+
+Dada uma matriz quadrada de inteiros de ordem N × N, imprima os elementos da sua diagonal secundária.
+
+A diagonal secundária é formada pelos elementos cujos índices satisfazem:
+i + j = N - 1
+
+Ou equivalentemente:
+A[i][N - 1 - i], para 0 <= i < N
+
+ 
+
+Entrada
+
+A entrada é composta por um inteiro N — dimensão da matriz (N × N).
+Em seguida, N linhas com N inteiros cada, representando a matriz.
+
+Saída
+
+Imprima os elementos da diagonal secundária em uma única linha, separados por espaço.
+
+Restrições: 1 <= N <= 100.
+Os elementos da matriz são inteiros (podem ser positivos, negativos ou zero).
+
+Exemplo
+
+Entrada: 
+3
+1 2 3
+4 5 6
+7 8 9
+
+Saída:
+3 5 7

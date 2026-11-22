@@ -1,0 +1,69 @@
+76-stringCopia.c
+
+Copiar String
+
+Implemente, sem utilizar funções da biblioteca <string.h>, uma função que copie o conteúdo de uma string para outra.
+
+A cópia deve incluir o caractere terminador '\0'.
+
+Implemente a função:
+void copia(char *destino, char *origem);
+
+- origem: string de entrada
+- destino: string onde o conteúdo será copiado
+- Após a execução, destino deve conter uma cópia exata de origem
+
+ Restrições:
+- A string pode ter até 1000 caracteres
+- Pode conter letras, números e símbolos
+- Não pode conter espaços
+
+ 
+
+Entrada
+
+Uma string origem.
+
+Saída
+
+Imprima a string copiada (destino).
+
+Exemplo1
+
+Entrada: 
+abc
+
+Saída:
+abc
+
+Exemplo2
+
+Entrada: 
+programacao
+
+Saída:
+programacao
+
+Exemplo3
+
+Entrada: 
+abc123
+
+Saída:
+abc123
+
+Exemplo4
+
+Entrada: 
+ola_mundo
+
+Saída:
+ola_mundo
+
+Exemplo5
+
+Entrada: 
+a!@#$
+
+Saída:
+a!@#$

@@ -1,0 +1,94 @@
+65-maximoPorLinha.c
+
+Máximo por Linha
+
+Dada uma matriz de inteiros com N linhas e M colunas, determine o maior valor de cada linha.
+
+ 
+
+Entrada
+
+A entrada é composta por dois inteiros N e M — dimensões da matriz.
+Em seguida, N linhas com M inteiros cada, representando a matriz.
+
+Saída
+
+Imprima N valores, onde cada valor corresponde ao maior elemento de uma linha da matriz.
+Cada valor deve ser impresso em uma nova linha.
+
+Restrições: 1 <= N, M <= 100.
+Os elementos da matriz são inteiros.
+
+Exemplo1
+
+Entrada: 
+2 3
+1 2 3
+4 5 6
+
+Saída:
+3
+6
+
+Exemplo2
+
+Entrada: 
+3 3
+1 1 1
+2 2 2
+3 3 3
+
+Saída:
+1
+2
+3
+
+Exemplo3
+
+Entrada: 
+1 5
+10 20 30 40 50
+
+Saída:
+50
+
+Exemplo4
+
+Entrada: 
+4 1
+5
+10
+15
+20
+
+Saída:
+5
+10
+15
+20
+
+Exemplo5
+
+Entrada: 
+3 3
+-1 -2 -3
+4 5 6
+-7 -8 -9
+
+Saída:
+-1
+6
+-7
+
+Exemplo6
+
+Entrada: 
+3 2
+0 1
+-1 2
+3 -3
+
+Saída:
+1
+2
+3

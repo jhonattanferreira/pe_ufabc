@@ -1,0 +1,88 @@
+56-compactaRunLength.c
+
+Compactação (Run-Length)
+
+Dada uma sequência de inteiros, implemente a compactação por contagem de repetições consecutivas (run-length encoding).
+
+Para cada grupo de valores iguais consecutivos, imprima:
+valor quantidade
+
+ 
+
+Entrada
+
+A entrada consiste em: um inteiro n, seguido de n inteiros.
+
+Saída
+
+A saída deve conter pares: valor frequência.
+Cada par deve aparecer em uma nova linha.
+A contagem considera apenas elementos consecutivos.
+
+Exemplo1 
+
+Entrada: 
+7
+1 1 1 2 2 3 1
+
+Saída:
+1 3
+2 2
+3 1
+1 1
+
+Exemplo2 
+
+Entrada: 
+5
+5 5 5 5 5
+
+Saída:
+5 5
+
+Exemplo3
+
+Entrada: 
+5
+1 2 3 4 5
+
+Saída:
+1 1
+2 1
+3 1
+4 1
+5 1
+
+Exemplo4
+
+Entrada: 
+6
+1 2 1 2 1 2
+
+Saída:
+1 1
+2 1
+1 1
+2 1
+1 1
+2 1
+
+Exemplo5
+
+Entrada: 
+6
+-1 -1 0 0 0 -1
+
+Saída:
+-1 2
+0 3
+-1 1
+
+Exemplo6
+
+Entrada: 
+1
+42
+
+Saída:
+42 1

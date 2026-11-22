@@ -1,0 +1,33 @@
+58-diagonalPrincipal.c
+
+Diagonal Principal
+
+Dada uma matriz quadrada de inteiros de ordem N × N, imprima os elementos da sua diagonal principal.
+
+A diagonal principal é formada pelos elementos cujos índices de linha e coluna são iguais, isto é:
+A[i][i], para 0 <= i < N
+
+ 
+
+Entrada
+
+A entrada é composta por um inteiro N — dimensão da matriz (N × N).
+Em seguida, N linhas com N inteiros cada, representando a matriz.
+
+Saída
+
+Imprima os elementos da diagonal principal em uma única linha, separados por espaço.
+
+Restrições: 1 <= N <= 100.
+Os elementos da matriz são inteiros (podem ser positivos, negativos ou zero).
+
+Exemplo
+
+Entrada: 
+3
+1 2 3
+4 5 6
+7 8 9
+
+Saída:
+1 5 9

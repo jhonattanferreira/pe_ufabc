@@ -1,0 +1,106 @@
+87-buscarAluno.c
+
+Buscar Aluno
+
+Dada uma lista de alunos, implemente um programa que permita buscar um aluno pela matrícula.
+
+Se o aluno for encontrado, exiba seus dados.
+
+Caso contrário, informe que o aluno não foi encontrado.
+
+Utilize uma struct:
+
+typedef struct tAluno {
+    char nome[100];
+    int matricula;
+    float nota;
+} Aluno;
+
+Restrições:
+- 1 <= N <= 1000
+- Nome pode ter até 100 caracteres
+- Nota entre 0.0 e 10.0
+- Matrículas são inteiros
+
+Entrada
+
+A entrada é composta por um inteiro N — número de alunos.
+N alunos: nome (string, sem espaços), matrícula (int), nota (float).
+Um inteiro M — matrícula a ser buscada.
+
+Saída
+
+Se o aluno for encontrado:
+Nome - Matrícula - Nota
+Caso contrário:
+Aluno nao encontrado
+
+Exemplo1
+
+Entrada: 
+2
+Ana 1 8.5
+Joao 2 7.0
+2
+
+Saída: 
+Joao - 2 - 7.00
+
+Exemplo2
+
+Entrada: 
+2
+Ana 1 8.5
+Joao 2 7.0
+3
+
+Saída: 
+Aluno nao encontrado
+
+Exemplo3
+
+Entrada: 
+1
+Maria 100 9.0
+100
+
+Saída: 
+Maria - 100 - 9.00
+
+Exemplo4
+
+Entrada: 
+3
+A 1 5.0
+B 2 6.0
+C 3 7.0
+1
+
+Saída: 
+A - 1 - 5.00
+
+Exemplo5
+
+Entrada: 
+3
+A 1 5.0
+B 2 6.0
+C 3 7.0
+3
+
+Saída: 
+C - 3 - 7.00
+
+Exemplo6
+
+Entrada: 
+5
+A 1 1.0
+B 2 2.0
+C 3 3.0
+D 4 4.0
+E 5 5.0
+10
+
+Saída: 
+Aluno nao encontrado

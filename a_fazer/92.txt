@@ -1,0 +1,90 @@
+92-bissexto.c
+
+(Fonte: Exercício do prof. Monael Ribeiro Pinheiro.)
+
+Descrição
+
+No Calendário Gregoriano, temos as seguintes regras para o cálculo dos anos bissextos:
+• De 4 em 4 anos é ano bissexto.
+• De 100 em 100 anos não é ano bissexto.
+• De 400 em 400 anos é ano bissexto.
+• Prevalecem as últimas regras sobre as primeiras.
+
+Para melhor entender são bissextos todos os anos múltiplos de 400, p.ex: 1600, 2000, 2400, 2800.
+São bissextos todos os múltiplos de 4 e não múltiplos de 100, p.ex: 1996, 2004, 2008, 2012.
+Não são bissextos todos os demais anos.
+
+Faça um programa que receba um ano e diga se ele é ou não bissexto de acordo com a regra do Calendário Gregoriano.
+
+Entrada
+
+O programa terá apenas um caso de teste. O caso de teste é composto por um número inteiro A, 1582 ≤ A ≤ 100000, representando o ano.
+
+Saída
+
+Seu programa deve gerar apenas uma linha de saída, contendo a frase “ANO BISSEXTO”, caso o ano informado seja bissexto ou “ANO NAO BISSEXTO” caso contrário, com todas as letras em maiúsculo e sem acentos.
+Logo após a impressão quebre uma linha.
+
+Exemplo1
+
+Entrada: 
+2014
+
+Saída:
+ANO NAO BISSEXTO
+
+Exemplo2
+
+Entrada: 
+1996
+
+Saída:
+ANO BISSEXTO
+
+Exemplo3
+
+Entrada:
+2100
+
+Saída:
+ANO NAO BISSEXTO
+
+Exemplo4
+
+Entrada:
+2400
+
+Saída:
+ANO BISSEXTO
+
+Exemplo5
+
+Entrada:
+2000
+
+Saída:
+ANO BISSEXTO
+
+Exemplo6
+
+Entrada:
+2096
+
+Saída:
+ANO BISSEXTO
+
+Exemplo7
+
+Entrada:
+2104
+
+Saída:
+ANO BISSEXTO
+
+Exemplo8
+
+Entrada:
+1991
+
+Saída:
+ANO NAO BISSEXTO

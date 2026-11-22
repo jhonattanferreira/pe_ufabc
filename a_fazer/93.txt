@@ -1,0 +1,81 @@
+93-datasStruct.c
+
+(Fonte: Exercício do prof. Monael Ribeiro Pinheiro.)
+
+Descrição
+
+Faça um programa que receba uma lista de datas e determine se ela é valida ou inválida de acordo com o Calendário Gregoriano.
+
+Para isto, você deve criar:
+- um struct tData com 3 campos inteiros: dia, mes e ano;
+- uma função isBissexto() que recebe um inteiro ano e devolve 1 se ano é bissexto, zero caso contrário; 
+- uma função isValida() que recebe uma data (struct do tipo tData); devolve 1 se a data é válida, 0 caso contrário.
+
+typedef struct tData {
+    int dia, mes, ano;
+} Data;
+int isBissexto (int ano);
+int isValida (Data dt);
+
+Entrada
+
+O programa terá apenas vários casos de testes.
+A primeira linha do caso de teste será um inteiro N, 0 < N ≤ 1000000, representando a quantidade de testes que ocorrerão.
+A seguir serão informadas N linhas, todas elas terão 3 números inteiros: D, M, A, separados por um espaço em branco cada, representando respectivamente o dia, o mês e o ano.
+
+Saída
+
+A saída consiste de N linhas. Cada linha conterá a frase “DATA VALIDA”, caso a data informada seja válida de acordo com o Calendário Gregoriano, ou “DATA INVALIDA”, caso contrário.
+A frase tem todas suas letras em caracteres maiúsculos e sem acentos.
+Após a impressão da última saída, quebre uma linha.
+
+Exemplo
+
+Entrada: 
+22
+15 5 2001
+31 1 1987
+31 2 1995
+31 3 1785
+31 4 1941
+31 5 1888
+31 6 1896
+31 7 2014
+31 8 2047
+31 9 2140
+31 10 1983
+31 11 1874
+31 12 1777
+31 2 2096
+31 2 2100
+31 2 2104
+31 2 2000
+31 2 2001
+20 1 1982
+66 6 1666
+15 15 2015
+31 1 2014
+
+Saída: 
+DATA VALIDA
+DATA VALIDA
+DATA INVALIDA
+DATA VALIDA
+DATA INVALIDA
+DATA VALIDA
+DATA INVALIDA
+DATA VALIDA
+DATA VALIDA
+DATA INVALIDA
+DATA VALIDA
+DATA INVALIDA
+DATA VALIDA
+DATA INVALIDA
+DATA INVALIDA
+DATA INVALIDA
+DATA INVALIDA
+DATA INVALIDA
+DATA VALIDA
+DATA INVALIDA
+DATA INVALIDA
+DATA VALIDA

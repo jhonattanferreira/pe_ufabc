@@ -1,0 +1,75 @@
+74-matrizDinamica.c
+
+Matriz Dinâmica
+
+Dada uma matriz de inteiros com N linhas e M colunas, aloque dinamicamente a matriz, leia seus valores e calcule a soma de todos os elementos.
+
+Ao final, libere corretamente toda a memória utilizada.
+
+Regras:
+- A matriz deve ser alocada dinamicamente com malloc
+- Não é permitido usar declaração estática (int m[100][100])
+- Você deve liberar toda a memória alocada ao final com free
+
+ 
+
+Entrada
+
+A entrada é composta por um inteiro N — tamanho do vetor.
+N inteiros representando os elementos do vetor.
+
+Saída
+
+Imprima um único inteiro correspondente à soma dos elementos do vetor.
+
+Exemplo1
+
+Entrada: 
+2 3
+1 2 3
+4 5 6
+
+Saída:
+21
+
+Exemplo2
+
+Entrada: 
+3 3
+1 1 1
+2 2 2
+3 3 3
+
+Saída:
+18
+
+Exemplo3
+
+Entrada: 
+1 4
+10 20 30 40
+
+Saída:
+100
+
+Exemplo4
+
+Entrada: 
+4 1
+5
+6
+7
+8
+
+Saída:
+26
+
+Exemplo5
+
+Entrada: 
+2 2
+-1 -2
+-3 -4
+
+Saída:
+-10

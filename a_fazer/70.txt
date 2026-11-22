@@ -1,0 +1,117 @@
+70-floodFill.c
+
+Flood Fill Simples
+
+Dada uma matriz de inteiros com N linhas e M colunas, implemente o algoritmo de flood fill (preenchimento por região).
+
+A partir de uma posição inicial (i, j), substitua todos os elementos conectados que possuem o mesmo valor inicial por um novo valor novo.
+
+Regras do preenchimento:
+- A posição inicial (i, j) pertence à região
+- A região é formada por todas as células conectadas com o mesmo valor
+- Conexão é considerada nas 4 direções: cima (i-1, j), baixo (i+1, j), esquerda (i, j-1), direita (i, j+1)
+- Todas essas células devem ser substituídas por novo
+
+ 
+
+Entrada
+
+A entrada é composta por dois inteiros N e M.
+N linhas com M inteiros cada (matriz).
+Dois inteiros i e j — posição inicial.
+Um inteiro novo — valor de substituição.
+
+Saída
+
+Imprima a matriz resultante após aplicar o flood fill.
+
+Restrições: 1 <= N, M <= 100.
+Os elementos da matriz são inteiros.
+
+Exemplo1
+
+Entrada: 
+3 3
+1 1 2
+1 1 2
+2 2 2
+0 0
+9
+
+Saída:
+9 9 2
+9 9 2
+2 2 2
+
+Exemplo2
+
+Entrada: 
+4 4
+1 1 1 2
+1 2 2 2
+1 1 1 2
+2 2 1 1
+0 0
+7
+
+Saída:
+7 7 7 2
+7 2 2 2
+7 7 7 2
+2 2 7 7
+
+Exemplo3
+
+Entrada: 
+3 3
+1 2 3
+4 5 6
+7 8 9
+1 1
+0
+
+Saída:
+1 2 3
+4 0 6
+7 8 9
+
+Exemplo4
+
+Entrada: 
+2 2
+5 5
+5 5
+0 1
+3
+
+Saída:
+3 3
+3 3
+
+Exemplo5
+
+Entrada: 
+3 3
+-1 -1 0
+-1  0  0
+ 0  0 -1
+0 0
+8
+
+Saída:
+8 8 0
+8 0 0
+0 0 -1
+
+Exemplo6
+
+Entrada: 
+2 2
+1 2
+3 4
+0 0
+1
+
+Saída:
+1 2
+3 4

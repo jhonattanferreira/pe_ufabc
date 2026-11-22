@@ -1,0 +1,65 @@
+77-stringConcatena.c
+
+Concatenar String
+
+Implemente, sem utilizar funções da biblioteca <string.h>, uma função que concatene duas strings, s1 e s2.
+
+A função deve devolver o conteúdo da string s1 concatenada com a string s2.
+Note que dentro da função, você deve alocar uma string dinâmica com malloc e devolver o ponteiro alocado.
+
+Implemente a função:
+char* concatena(char *s1, char *s2);
+- Recebe duas strings, s1 e s2
+- Aloca espaço com malloc para armazenar a concatenação
+- Devolve o ponteiro alocado
+
+ Restrições:
+- A string pode ter até 1000 caracteres
+- Pode conter letras, números e símbolos
+- Não pode conter espaços
+
+ 
+
+Entrada
+
+Duas strings s1 e s2.
+
+Saída
+
+Imprima a string resultante da concatenação.
+
+Exemplo1
+
+Entrada: 
+abc
+def
+
+Saída:
+abcdef
+
+Exemplo2
+
+Entrada: 
+programacao
+estruturada
+
+Saída:
+programacaoestruturada
+
+Exemplo3
+
+Entrada: 
+abc
+123
+
+Saída:
+abc123
+
+Exemplo4
+
+Entrada: 
+ola
+mundo
+
+Saída:
+olamundo

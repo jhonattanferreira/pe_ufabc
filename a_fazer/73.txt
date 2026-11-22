@@ -1,0 +1,66 @@
+73-vetorDinamico.c
+
+Vetor Dinâmico
+
+Dado um inteiro N, aloque dinamicamente um vetor de N inteiros, leia seus valores, calcule a soma dos elementos e, ao final, libere a memória utilizada.
+
+Regras:
+- A alocação deve ser feita com malloc
+- O vetor não pode ser declarado de forma estática (int v[100], por exemplo)
+- Após o uso, a memória deve ser liberada com free
+
+ 
+
+Entrada
+
+A entrada é composta por um inteiro N — tamanho do vetor.
+N inteiros representando os elementos do vetor.
+
+Saída
+
+Imprima um único inteiro correspondente à soma dos elementos do vetor.
+
+Exemplo1
+
+Entrada: 
+5
+1 2 3 4 5
+
+Saída:
+15
+
+Exemplo2
+
+Entrada: 
+4
+2 2 2 2
+
+Saída:
+8
+
+Exemplo3
+
+Entrada: 
+1
+42
+
+Saída:
+42
+
+Exemplo4
+
+Entrada: 
+5
+-1 -2 -3 -4 -5
+
+Saída:
+-15
+
+Exemplo5
+
+Entrada: 
+6
+1 -1 2 -2 3 -3
+
+Saída:
+0

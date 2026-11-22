@@ -1,0 +1,9 @@
+// entrada em cima do ---, saída embaixo, === separa os casos
+
+
+5
+1 2 3 4 5
+2
+---
+4 5 1 2 3
+===

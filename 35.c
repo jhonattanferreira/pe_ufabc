@@ -2,16 +2,18 @@
 
 int main() {
 
-    int n = 0;
     int x = 0;
+    
+    scanf("%d", &x);
+    
     int vetorA[x];
 
-    for (int i = 0; i <= n; i++) {
-        scanf("%d", &vetorA[x]);
+    for (int i = 0; i <= x; i++) {
+        scanf("%d", &vetorA[i]);
     }
 
-    for (int i = 0; i < n; i++) {
-        printf("%d", vetorA[x]);
+    for (int i = 0; i < x; i++) {
+        printf("%d ", vetorA[i]);
     }
 
     return 0;

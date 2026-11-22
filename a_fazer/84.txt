@@ -1,0 +1,38 @@
+84-buscaBinaria.c
+
+Busca Binária
+
+Dado um vetor de inteiros ordenado em ordem crescente e um valor x, implemente a busca binária para encontrar a posição de x.
+
+Se o elemento existir, imprima o índice.
+Caso contrário, imprima -1.
+
+ Seu programa deve ser O( n log n ). 
+
+Entrada
+
+A entrada consiste de um inteiro n, seguido de n inteiros (em ordem crescente), seguido de uma chave x.
+
+Saída
+
+Índice ou -1.
+
+Exemplo1 
+
+Entrada: 
+5
+1 3 5 7 9
+5
+
+Saída:
+2
+
+Exemplo2 
+
+Entrada: 
+6
+2 4 6 8 10 12
+7
+
+Saída:
+-1

@@ -1,0 +1,65 @@
+60-matrizSimetrica.c
+
+Verificar Simetria
+
+Dada uma matriz quadrada de inteiros de ordem N × N, verifique se ela é simétrica.
+
+Uma matriz é considerada simétrica quando:
+A[i][j] = A[j][i], para todo 0 = i, j < N
+
+Ou seja, a matriz é igual à sua transposta.
+
+ 
+
+Entrada
+
+A entrada é composta por um inteiro N — dimensão da matriz (N × N).
+Em seguida, N linhas com N inteiros cada, representando a matriz.
+
+Saída
+
+Imprima: "SIM" se a matriz for simétrica, "NAO" caso contrário.
+
+Restrições: 1 <= N <= 100.
+Os elementos da matriz são inteiros (podem ser positivos, negativos ou zero).
+
+Exemplo1
+
+Entrada: 
+3
+1 2 3
+2 4 5
+3 5 6
+
+Saída:
+SIM
+
+Exemplo2
+
+Entrada: 
+2
+7 8
+8 9
+
+Saída:
+SIM
+
+Exemplo3
+
+Entrada: 
+1
+42
+
+Saída:
+SIM
+
+Exemplo4
+
+Entrada: 
+3
+1 2 3
+4 5 6
+7 8 9
+
+Saída:
+NAO

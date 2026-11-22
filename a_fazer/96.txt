@@ -1,0 +1,99 @@
+96-complexosStruct.c
+
+(Fonte: Exercício do prof. Monael Ribeiro Pinheiro.)
+
+Descrição
+
+Os números complexos formam um conjunto numérico que é mais abrangente que os números reais.
+Eles surgiram após inúmeros estudos, sobretudo após tentativas de se resolver equações do segundo e do terceiro grau.
+Nessa época, os matemáticos se depararam com raízes quadradas de números negativos, que não podem ser expressas no conjunto dos números reais.
+Assim, os matemáticos passaram a denotar essas raízes usando a letra i.
+A base principal foi adotar i=√−1 .
+Os números complexos são representados geometricamente no plano complexo.
+Nele, representa-se a parte real x no eixo horizontal e a parte imaginária y no eixo vertical.
+
+Dessa forma, em sua forma retangular ou cartesiana, o número é representado como:
+Z = (x , y) = x + yi
+
+Faça um programa que receba dois números complexos na forma cartesiana e um operador e devolva o número complexo resultante da operação sobre os dois complexos.
+
+Entrada
+
+A entrada é composta de várias linhas, em cada linha é apresentado dois números complexos na forma cartesiana M1 e M2 separados por um operador +, -, * ou /.
+Os números complexos M1 e M2 são formados por quatro números inteiros A,B,C e D, de modo que:
+M1 = A + Bi
+M2 = C + Di
+sendo -500 ≤ A,B,C,D ≤ 500.
+Para realizar as operações, crie um um Tipo Abstrato e cinco funções para criar uma variável e para realizar as operações de soma, subtração, multiplicação e divisão.
+
+Protótipo                                                   Descrição
+struct tComplex complexo(int, int);       Recebe dois inteiros a e b e devolve um
+                                                                   complexo
+
+struct tComplex soma(struct tComplex, struct tComplex); Recebe dois complexos e 
+                                                                                                    devolve a adição.
+
+struct tComplex subtrai(struct tComplex, struct tComplex); Recebe dois complexo e 
+                                                                                                devolve a subtração.
+
+struct tComplex multiplica(struct tComplex, struct tComplex); Recebe dois complexos e 
+                                                                                                 devolve o produto.
+
+struct tComplex divide(struct tComplex, struct tComplex); Recebe dois complexos e 
+                                                                                               devolve o quociente.
+
+(O trecho abaixo foi extraído de: https://www.infoescola.com/matematica/numeros-complexos/
+ Note que, no documento original, há um equívoco na divisão de complexos que foi corrigido aqui.)
+
+Saída
+
+A saída é composta por várias linhas contendo o número complexo resultante na forma cartesiana com coeficientes inteiros.
+Após a impressão do valor, quebre uma linha.
+
+Exemplo1
+
+Entrada: 
+-251 -427i * 158 430i
+44 378i + 423 209i
+-335 -8i * -458 487i
+-173 229i + 340 112i
+-331 209i + -343 60i
+-401 -222i / 316 -165i
+326 12i + -233 310i
+479 -351i / 79 321i
+
+Saída: 
+143952 -175396i
+467 587i
+157326 -159481i
+167 341i
+-674 269i
+0 -1i
+93 322i
+0 -1i
+
+Exemplo2
+
+Entrada: 
+-253 -115i / -4 385i
+-80 -356i + 468 235i
+125 34i + -458 -489i
+-348 -256i * -205 318i
+192 315i * 491 -467i
+-103 53i * 47 325i
+162 -289i / 308 -123i
+125 -165i + 368 495i
+267 -61i + 374 -169i
+-199 372i / 60 -406i
+
+Saída: 
+0 0i
+388 -121i
+-333 -455i
+152748 -58184i
+241377 65001i
+-22066 -30984i
+0 0i
+493 330i
+641 -230i
+0 0i

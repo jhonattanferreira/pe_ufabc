@@ -1,0 +1,106 @@
+90-agruparCategorias.c
+
+Agrupamento por Categoria
+
+Implemente um programa em C que agrupe produtos por categoria e calcule o valor total por categoria.
+
+Cada produto possui:
+- nome (string)
+- categoria (string)
+- preço (float)
+- quantidade (int)
+
+O programa deve:
+1. Ler os dados de N produtos
+2. Agrupar os produtos por categoria
+3. Calcular o valor total de cada categoria
+4. Imprimir cada categoria com seu total
+
+Definições:
+- O valor de um produto é:
+preco * quantidade
+- O valor da categoria é a soma dos valores dos produtos pertencentes a ela
+- Categorias iguais devem ser agrupadas (comparação de string)
+
+Usar struct:
+typedef struct tProduto {
+    char nome[100];
+    char categoria[100];
+    float preco;
+    int quantidade;
+} Produto;
+
+Restrições:
+- 1 <= N <= 1000
+- Preço >= 0
+- Quantidade >= 0
+
+Entrada
+
+Um inteiro N — número de produtos.
+N produtos: nome (string, sem espaços), categoria (string, sem espaços), preço (float), quantidade (int).
+
+Saída
+
+Para cada categoria, imprimir:
+Categoria - Total
+O total deve ser exibido com 2 casas decimais.
+A ordem de saída deve ser a ordem de primeira aparição da categoria.
+
+Exemplo1
+
+Entrada: 
+3
+Caneta Papelaria 2.0 10
+Caderno Papelaria 10.0 5
+Mouse Eletronicos 50.0 2
+
+Saída: 
+Papelaria - 70.00
+Eletronicos - 100.00
+
+Exemplo2
+
+Entrada: 
+2
+A Cat1 5.0 2
+B Cat1 10.0 1
+
+Saída: 
+Cat1 - 20.00
+
+Exemplo3
+
+Entrada: 
+4
+A X 1.0 1
+B Y 2.0 2
+C X 3.0 3
+D Z 4.0 4
+
+Saída: 
+X - 10.00
+Y - 4.00
+Z - 16.00
+
+Exemplo4
+
+Entrada: 
+2
+A Cat 0.0 10
+B Cat 5.0 0
+
+Saída: 
+Cat - 0.00
+
+Exemplo5
+
+Entrada: 
+3
+A Cat2 10.0 1
+B Cat1 5.0 2
+C Cat2 5.0 1
+
+Saída: 
+Cat2 - 15.00
+Cat1 - 10.00

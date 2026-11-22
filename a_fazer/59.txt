@@ -1,0 +1,79 @@
+59-matrizIdentidade.c
+
+Matriz Identidade
+
+Dada uma matriz quadrada de inteiros de ordem N × N, verifique se ela é uma matriz identidade.
+
+Uma matriz identidade é aquela em que:
+- Todos os elementos da diagonal principal são iguais a 1;
+- Todos os demais elementos são iguais a 0.
+
+Formalmente:
+A[i][j] = 1, se i == j
+A[i][j] = 0, se i != j
+
+ 
+
+Entrada
+
+A entrada é composta por um inteiro N — dimensão da matriz (N × N).
+Em seguida, N linhas com N inteiros cada, representando a matriz.
+
+Saída
+
+Imprima: "SIM" se a matriz for identidade, "NAO" caso contrário.
+
+Restrições: 1 <= N <= 100.
+Os elementos da matriz são inteiros.
+
+Exemplo1
+
+Entrada: 
+3
+1 0 0
+0 1 0
+0 0 1
+
+Saída:
+SIM
+
+Exemplo2
+
+Entrada: 
+2
+1 0
+0 1
+
+Saída:
+SIM
+
+Exemplo3
+
+Entrada: 
+1
+1
+
+Saída:
+SIM
+
+Exemplo4
+
+Entrada: 
+3
+1 0 0
+0 2 0
+0 0 1
+
+Saída:
+NAO
+
+Exemplo5
+
+Entrada: 
+3
+1 0 0
+0 1 5
+0 0 1
+
+Saída:
+NAO

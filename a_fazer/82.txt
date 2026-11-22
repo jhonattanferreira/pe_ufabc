@@ -1,0 +1,24 @@
+82-bubbleSort.c
+
+BubbleSort
+
+Faça um programa que receba um vetor de inteiros de tamanho N e ordene os seus elementos usando o algoritmo bolha (Bubble Sort).
+
+Entrada
+
+O programa terá apenas um caso de teste. 
+A primeira linha do caso de teste contem um inteiro N, 0 < N <= 10000, representando o tamanho do vetor.
+A segunda linha do caso de teste contem N números inteiros separados por um espaço em branco cada. 
+
+Saída
+
+O programa imprime os elementos ordenados, separados por espaço.
+
+Exemplo
+
+Entrada: 
+10
+54 12 2 90 4 78 55 21 2 48
+
+Saída: 
+2 2 4 12 21 48 54 55 78 90

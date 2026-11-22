@@ -1,0 +1,72 @@
+78-stringCompara.c
+
+Comparar String
+
+Implemente, sem utilizar funções da biblioteca <string.h>, uma função que compare duas strings lexicograficamente.
+
+A função deve se comportar de forma semelhante à função strcmp.
+
+Implemente a função:
+int compara(char *s1, char *s2);
+
+A função deve retornar:
+- 0 se s1 e s2 são iguais
+- Um valor negativo se s1 < s2
+- Um valor positivo se s1 > s2
+
+A comparação deve ser feita caractere por caractere, usando os valores ASCII.
+
+ Restrições:
+- Cada string pode ter até 1000 caracteres
+- Pode conter letras, números e símbolos
+- Não pode conter espaços
+- A comparação é sensível a maiúsculas/minúsculas
+
+ 
+
+Entrada
+
+Duas strings s1 e s2.
+
+Saída
+
+Imprima:
+- IGUAL se o retorno for 0
+- MENOR se s1 < s2
+- MAIOR se s1 > s2
+
+Exemplo1
+
+Entrada: 
+abc
+abc
+
+Saída:
+IGUAL
+
+Exemplo2
+
+Entrada: 
+abc
+abd
+
+Saída:
+MENOR
+
+Exemplo3
+
+Entrada: 
+abd
+abc
+
+Saída:
+MAIOR
+
+Exemplo4
+
+Entrada: 
+abc1
+abc2
+
+Saída:
+MENOR

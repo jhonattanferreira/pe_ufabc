@@ -1,0 +1,85 @@
+66-rotacao90.c
+
+Rotação 90°
+
+Dada uma matriz de inteiros com N linhas e M colunas, gere e imprima uma nova matriz correspondente à rotação de 90 graus no sentido horário.
+
+Após a rotação, a nova matriz terá dimensão M × N.
+
+A transformação é dada por:
+R[j][N - 1 - i] = A[i][j]
+
+ 
+
+Entrada
+
+A entrada é composta por dois inteiros N e M — dimensões da matriz.
+Em seguida, N linhas com M inteiros cada.
+
+Saída
+
+Imprima a matriz rotacionada (90° horário): M linhas, N colunas.
+Elementos separados por espaço.
+
+Restrições: 1 <= N, M <= 100.
+Os elementos da matriz são inteiros.
+
+Exemplo1
+
+Entrada: 
+2 3
+1 2 3
+4 5 6
+
+Saída:
+4 1
+5 2
+6 3
+
+Exemplo2
+
+Entrada: 
+3 3
+1 2 3
+4 5 6
+7 8 9
+
+Saída:
+7 4 1
+8 5 2
+9 6 3
+
+Exemplo3
+
+Entrada: 
+1 4
+10 20 30 40
+
+Saída:
+10
+20
+30
+40
+
+Exemplo4
+
+Entrada: 
+4 1
+5
+6
+7
+8
+
+Saída:
+8 7 6 5
+
+Exemplo5
+
+Entrada: 
+2 2
+-1 -2
+-3 -4
+
+Saída:
+-3 -1
+-4 -2

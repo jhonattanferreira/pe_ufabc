@@ -1,0 +1,120 @@
+88-sistemaProdutos.c
+
+Sistema de Produtos
+
+Implemente um programa em C para gerenciar um sistema simples de produtos.
+
+Cada produto possui:
+- nome (string)
+- código (inteiro)
+- preço (float)
+- quantidade em estoque (int)
+
+O programa deve:
+1. Ler os dados de N produtos
+2. Calcular o valor total em estoque
+3. Identificar o produto mais caro
+4. Permitir a busca de um produto pelo código
+
+Utilize uma struct:
+typedef struct tProduto {
+    char nome[100];
+    int codigo;
+    float preco;
+    int quantidade;
+} Produto;
+
+Restrições:
+- 1 <= N <= 1000
+- Preço >= 0
+- Quantidade >= 0
+
+Entrada
+
+A entrada é composta por um inteiro N — número de produtos.
+N produtos: nome (string, sem espaços), código (int), preço (float), quantidade (int).
+Um inteiro C — código a ser buscado.
+
+Saída
+
+Imprima:
+1. Valor total em estoque:
+Total: X.XX
+2. Produto mais caro:
+Mais caro: Nome - Preco
+3. Resultado da busca:
+- Se encontrado:
+Encontrado: Nome - Codigo - Preco - Quantidade
+- Caso contrário:
+Produto nao encontrado
+
+Regras:
+- O valor total em estoque é a soma de:
+preco * quantidade
+- Em caso de empate no preço, considerar o primeiro produto lido como o mais caro
+
+Exemplo1
+
+Entrada: 
+2
+Caneta 1 2.5 10
+Caderno 2 15.0 5
+2
+
+Saída: 
+Total: 100.00
+Mais caro: Caderno - 15.00
+Encontrado: Caderno - 2 - 15.00 - 5
+
+Exemplo2
+
+Entrada: 
+2
+Caneta 1 2.5 10
+Caderno 2 15.0 5
+3
+
+Saída: 
+Total: 100.00
+Mais caro: Caderno - 15.00
+Produto nao encontrado
+
+Exemplo3
+
+Entrada: 
+2
+ProdutoA 1 0.0 0
+ProdutoB 2 10.0 0
+1
+
+Saída: 
+Total: 0.00
+Mais caro: ProdutoB - 10.00
+Encontrado: ProdutoA - 1 - 0.00 - 0
+
+Exemplo4
+
+Entrada: 
+2
+A 1 10.0 1
+B 2 10.0 2
+2
+
+Saída: 
+Total: 30.00
+Mais caro: A - 10.00
+Encontrado: B - 2 - 10.00 - 2
+
+Exemplo5
+
+Entrada: 
+3
+A 1 5.0 2
+B 2 7.5 1
+C 3 2.0 10
+3
+
+Saída: 
+Total: 37.50
+Mais caro: B - 7.50
+Encontrado: C - 3 - 2.00 - 10

@@ -1,0 +1,25 @@
+53-frequencia.c
+
+Frequência
+
+Dado um vetor de inteiros A com n elementos, conte quantas vezes cada número aparece no vetor.
+
+Entrada
+
+O vetor A é composto por um inteiro N, seguido da sequência de N inteiros.
+
+Saída
+
+A saída consiste das frequências dos elementos conforme exemplo.
+
+Exemplo 
+
+Entrada:
+7
+1 2 2 3 1 4 2
+
+Saída: 
+1 2
+2 3
+3 1
+4 1

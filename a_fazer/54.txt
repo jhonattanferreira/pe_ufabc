@@ -1,0 +1,69 @@
+54-intercala.c
+
+(Fonte: Exercício do prof. Monael Ribeiro Pinheiro.)
+
+Descrição
+
+Faça um algoritmo que aloque dois vetores V1 e V2 com o tamanho de cada entrada q1 e q2, receba os q1 valores no vetor V1 e os q2 valores no vetor V2. 
+Construa um terceiro vetor, Vr, com a intercalação dos vetores V1 e V2 de forma que Vr fique ordenada. 
+Seu programa deve ser O( n ), onde n é a quantidade de valores, ou seja q1+q2. 
+Exemplo:
+
+// Recebe dois vetores ordenados, v1 e v2, e os seus respectivos tamanhos, q1 e q2.
+// Devolve um novo vetor ordenado com a intercalacao de v1 e v2.
+int * intercala (int *v1, int *v2, int q1, int q2);
+
+Entrada
+
+A entrada consiste de dois número positivo q1 e q2, sendo 0 < q1,2 <= 500000, representando a quantidade de entradas do programa. 
+Seguido de q1+q2 linhas, onde nas q1 primeiras linhas estão os q1 valores e nas demais q2 linhas estão os q2 valores. 
+Esses valores são naturais k, 0 <= k <= 999999. 
+E ainda, dentro do mesmo bloco é garantido que o número k, representado na linha q, é menor que o número que está em q+1 e maior que ou igual ao que está em q-1. 
+Ou seja: kq-1 <= kq < kq+1 para todo q.
+
+Dica: Você pode partir do seguinte exemplo abaixo de leitura da entrada, mas não esqueça de adaptar o procedimento de impressão na saída.
+
+#include <stdio.h>
+#include <stdlib.h>
+void imprime (int *v, int n) {
+    int i;
+    printf ("[");
+    for (i = 0; i < n; i++) {
+        printf ("%d ", v[i]);
+    }
+    printf ("]\n");
+}
+int main () {
+    int q1, q2, i;
+    scanf ("%d", &q1);
+    scanf ("%d", &q2);
+    int *v1 = malloc (sizeof (int) * q1);
+    int *v2 = malloc (sizeof (int) * q2);
+    
+    for (i = 0; i < q1; i++) {
+        scanf ("%d", &v1[i]);
+    }
+    for (i = 0; i < q2; i++) {
+        scanf ("%d", &v2[i]);
+    }
+    imprime (v1, q1);
+    imprime (v2, q2);
+    
+    free (v1);
+    free (v2);
+    return 0;
+}
+
+Saída
+
+A saída deverá ser todos os q1+q2 valores das duas entradas intercalados e impressos de forma crescente.
+
+Exemplo 
+
+Entrada: 
+5 7 
+1 3 5 7 21
+0 2 4 6 8 10 12
+
+Saída: 
+0 1 2 3 4 5 6 7 8 10 12 21
