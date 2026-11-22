@@ -1,22 +1,5 @@
+#include <stdbool.h>
 #include <stdio.h>
-
-void preencher(int n, int m, int matriz[n][m], int i, int j, int antigo, int novo) {
-
-    if (i < 0 || i >= n || j < 0 || j >= m) {
-        return;
-    }
-
-    if (matriz[i][j] != antigo) {
-        return;
-    }
-
-    matriz[i][j] = novo;
-
-    preencher(n, m, matriz, i - 1, j, antigo, novo);
-    preencher(n, m, matriz, i + 1, j, antigo, novo);
-    preencher(n, m, matriz, i, j - 1, antigo, novo);
-    preencher(n, m, matriz, i, j + 1, antigo, novo);
-}
 
 int main() {
 
@@ -25,24 +8,71 @@ int main() {
     int x = 0;
     int y = 0;
     int novo = 0;
+    bool mudou = true;
 
-    scanf("%d %d", &n, &m);
+    scanf("%d", &n);
+    scanf("%d", &m);
 
     int matriz[n][m];
+    int pintado[n][m];
 
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < m; j++) {
             scanf("%d", &matriz[i][j]);
+            pintado[i][j] = 0;
         }
     }
 
-    scanf("%d %d", &x, &y);
+    scanf("%d", &x);
+    scanf("%d", &y);
     scanf("%d", &novo);
 
     int antigo = matriz[x][y];
 
-    if (antigo != novo) {
-        preencher(n, m, matriz, x, y, antigo, novo);
+    pintado[x][y] = 1;
+
+    while (mudou == true) {
+
+        mudou = false;
+
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+
+                if (matriz[i][j] == antigo && pintado[i][j] == 0) {
+
+                    bool vizinho_pintado = false;
+
+                    if (i > 0 && pintado[i - 1][j] == 1) {
+                        vizinho_pintado = true;
+                    }
+
+                    if (i < n - 1 && pintado[i + 1][j] == 1) {
+                        vizinho_pintado = true;
+                    }
+
+                    if (j > 0 && pintado[i][j - 1] == 1) {
+                        vizinho_pintado = true;
+                    }
+
+                    if (j < m - 1 && pintado[i][j + 1] == 1) {
+                        vizinho_pintado = true;
+                    }
+
+                    if (vizinho_pintado == true) {
+                        pintado[i][j] = 1;
+                        mudou = true;
+                    }
+                }
+            }
+        }
+    }
+
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < m; j++) {
+            if (pintado[i][j] == 1) {
+                matriz[i][j] = novo;
+            }
+        }
     }
 
     for (int i = 0; i < n; i++) {

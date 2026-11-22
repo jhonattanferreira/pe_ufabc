@@ -16,6 +16,9 @@ int main() {
     int maior = vetorA[0];
 
     for (int i = 0; i < n; i++) {
+
+        soma = 0;
+
         for (int j = i; j < n; j++) {
             soma += vetorA[j];
 

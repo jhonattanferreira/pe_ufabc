@@ -6,7 +6,8 @@ int main() {
     int p = 0;
     int aux = 0;
 
-    scanf("%d %d", &n, &p);
+    scanf("%d", &n);
+    scanf("%d", &p);
 
     int vetor[n];
 

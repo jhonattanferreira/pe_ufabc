@@ -19,7 +19,10 @@ int main() {
     Produto produtos[n];
 
     for (int i = 0; i < n; i++) {
-        scanf("%s %d %f %d", produtos[i].nome, &produtos[i].codigo, &produtos[i].preco, &produtos[i].quantidade);
+        scanf("%s", produtos[i].nome);
+        scanf("%d", &produtos[i].codigo);
+        scanf("%f", &produtos[i].preco);
+        scanf("%d", &produtos[i].quantidade);
     }
 
     scanf("%d", &busca);

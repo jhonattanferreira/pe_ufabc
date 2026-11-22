@@ -11,7 +11,8 @@ int main() {
     int b = 0;
     int result = 0;
 
-    scanf("%d %d", &a, &b);
+    scanf("%d", &a);
+    scanf("%d", &b);
 
     soma(a, b, &result);
 

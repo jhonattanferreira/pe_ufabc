@@ -50,7 +50,12 @@ int main() {
     int d = 0;
     char operacao;
 
-    while (scanf("%d %di %c %d %di", &a, &b, &operacao, &c, &d) != EOF) {
+    while (scanf("%d", &a) != EOF) {
+
+        scanf("%di", &b);
+        scanf(" %c", &operacao);
+        scanf("%d", &c);
+        scanf("%di", &d);
 
         struct tComplex x = complexo(a, b);
         struct tComplex y = complexo(c, d);

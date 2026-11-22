@@ -5,7 +5,8 @@ int main() {
     int n = 0;
     int m = 0;
 
-    scanf("%d %d", &n, &m);
+    scanf("%d", &n);
+    scanf("%d", &m);
 
     int matriz[n][m];
 

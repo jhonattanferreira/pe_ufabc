@@ -12,7 +12,8 @@ int main() {
     int x = 0;
     int y = 0;
 
-    scanf("%d %d", &x, &y);
+    scanf("%d", &x);
+    scanf("%d", &y);
 
     swap(&x, &y);
 

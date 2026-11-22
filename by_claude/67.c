@@ -7,7 +7,8 @@ int main() {
     int x = 0;
     int quantidade = 0;
 
-    scanf("%d %d", &n, &m);
+    scanf("%d", &n);
+    scanf("%d", &m);
     scanf("%d", &x);
 
     int matriz[n][m];

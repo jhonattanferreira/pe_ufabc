@@ -51,7 +51,9 @@ int main() {
 
     for (int i = 0; i < n; i++) {
 
-        scanf("%d %d %d", &dt.dia, &dt.mes, &dt.ano);
+        scanf("%d", &dt.dia);
+        scanf("%d", &dt.mes);
+        scanf("%d", &dt.ano);
 
         if (isValida(dt) == 1) {
             printf("DATA VALIDA\n");

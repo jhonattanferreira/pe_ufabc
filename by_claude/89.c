@@ -23,7 +23,9 @@ int main() {
     Produto produtos[n];
 
     for (int i = 0; i < n; i++) {
-        scanf("%s %d %f", produtos[i].nome, &produtos[i].codigo, &produtos[i].preco);
+        scanf("%s", produtos[i].nome);
+        scanf("%d", &produtos[i].codigo);
+        scanf("%f", &produtos[i].preco);
     }
 
     scanf("%d", &m);
@@ -37,7 +39,8 @@ int main() {
         int existe = 0;
         int ja_tem = 0;
 
-        scanf("%d %d", &codigo, &qtd);
+        scanf("%d", &codigo);
+        scanf("%d", &qtd);
 
         for (int j = 0; j < n; j++) {
             if (produtos[j].codigo == codigo) {

@@ -31,7 +31,9 @@ int main() {
     Aluno alunos[n];
 
     for (int i = 0; i < n; i++) {
-        scanf("%s %d %f", alunos[i].nome, &alunos[i].matricula, &alunos[i].nota);
+        scanf("%s", alunos[i].nome);
+        scanf("%d", &alunos[i].matricula);
+        scanf("%f", &alunos[i].nota);
     }
 
     for (int i = 0; i < n; i++) {

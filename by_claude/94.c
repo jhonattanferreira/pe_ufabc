@@ -34,7 +34,9 @@ int main() {
 
     Data dt;
 
-    scanf("%d %d %d", &dt.dia, &dt.mes, &dt.ano);
+    scanf("%d", &dt.dia);
+    scanf("%d", &dt.mes);
+    scanf("%d", &dt.ano);
 
     dt.dia++;
 
