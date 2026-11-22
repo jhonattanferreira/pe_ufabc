@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void swap(int *a, int *b) {
+void trocar(int *a, int *b) {
 
     int aux = *a;
     *a = *b;
@@ -15,7 +15,7 @@ int main() {
     scanf("%d", &x);
     scanf("%d", &y);
 
-    swap(&x, &y);
+    trocar(&x, &y);
 
     printf("%d %d", x, y);
 
