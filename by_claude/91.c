@@ -83,12 +83,7 @@ int main() {
     int d2 = 0;
     char operacao;
 
-    while (scanf("%d", &n1) != EOF) {
-
-        scanf("%d", &d1);
-        scanf(" %c", &operacao);
-        scanf("%d", &n2);
-        scanf("%d", &d2);
+    while (scanf("%d %d %c %d %d", &n1, &d1, &operacao, &n2, &d2) != EOF) {
 
         struct tRacional a = racional(n1, d1);
         struct tRacional b = racional(n2, d2);
