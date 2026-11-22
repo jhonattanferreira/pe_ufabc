@@ -3,6 +3,7 @@
 int main() {
 
     int n = 0;
+    int soma = 0;
 
     scanf("%d", &n);
 
@@ -15,9 +16,6 @@ int main() {
     int maior = vetorA[0];
 
     for (int i = 0; i < n; i++) {
-
-        int soma = 0;
-
         for (int j = i; j < n; j++) {
             soma += vetorA[j];
 
