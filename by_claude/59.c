@@ -1,40 +1,33 @@
-#include <stdbool.h>
 #include <stdio.h>
-
-int main() {
-
-    int n = 0;
-    bool eh_identidade = true;
-
+#include <stdlib.h>
+int ehIdentidade(int **mat, int n) {
+    int i, j;
+    for (i=0; i<n; i++) {
+        for (j=0; j<n; j++) {
+            if (i == j && mat[i][j] != 1) { return 0; }
+            if (i != j && mat[i][j] != 0) { return 0; }
+        }
+    }
+    return 1;
+}
+int main()
+{
+    int i, j, n;
     scanf("%d", &n);
-
-    int matriz[n][n];
-
-    for (int i = 0; i < n; i++) {
-        for (int j = 0; j < n; j++) {
-            scanf("%d", &matriz[i][j]);
+    int **mat = malloc(sizeof(int *) * n);
+    for (i=0; i<n; i++) {
+        mat[i] = malloc(sizeof(int) * n);
+    }
+    for (i=0; i<n; i++) {
+        for (j=0; j<n; j++) {
+            scanf("%d", &mat[i][j]);
         }
     }
-
-    for (int i = 0; i < n; i++) {
-        for (int j = 0; j < n; j++) {
-            if (i == j) {
-                if (matriz[i][j] != 1) {
-                    eh_identidade = false;
-                }
-            } else {
-                if (matriz[i][j] != 0) {
-                    eh_identidade = false;
-                }
-            }
-        }
+    if (ehIdentidade(mat, n)) { printf("SIM\n"); }
+    else { printf("NAO\n"); }
+    for (i=0; i<n; i++) {
+        free(mat[i]);
     }
-
-    if (eh_identidade == true) {
-        printf("SIM");
-    } else {
-        printf("NAO");
-    }
-
+    free(mat);
     return 0;
 }

@@ -1,85 +1,62 @@
 #include <stdio.h>
-
 typedef struct tProduto {
     char nome[100];
     int codigo;
     float preco;
 } Produto;
-
 typedef struct tItemCarrinho {
     int codigo;
     int quantidade;
 } ItemCarrinho;
-
-int main() {
-
-    int n = 0;
-    int m = 0;
-    int quantidade = 0;
+int buscaProduto(Produto *v, int n, int cod) {
+    int i;
+    for (i=0; i<n; i++) {
+        if (v[i].codigo == cod) { return i; }
+    }
+    return -1;
+}
+int buscaItem(ItemCarrinho *c, int k, int cod) {
+    int i;
+    for (i=0; i<k; i++) {
+        if (c[i].codigo == cod) { return i; }
+    }
+    return -1;
+}
+int adicionaItem(ItemCarrinho *c, int k, int cod, int qtd) {
+    int i = buscaItem(c, k, cod);
+    if (i >= 0) {
+        c[i].quantidade += qtd;
+        return k;
+    }
+    c[k].codigo = cod; c[k].quantidade = qtd;
+    return k + 1;
+}
+int main()
+{
+    int i, n, m, cod, qtd, k=0;
     float total = 0;
-
+    Produto produtos[1000];
+    ItemCarrinho carrinho[1000];
     scanf("%d", &n);
-
-    Produto produtos[n];
-
-    for (int i = 0; i < n; i++) {
+    for (i=0; i<n; i++) {
         scanf("%s", produtos[i].nome);
         scanf("%d", &produtos[i].codigo);
         scanf("%f", &produtos[i].preco);
     }
-
     scanf("%d", &m);
-
-    ItemCarrinho carrinho[m];
-
-    for (int i = 0; i < m; i++) {
-
-        int codigo = 0;
-        int qtd = 0;
-        int existe = 0;
-        int ja_tem = 0;
-
-        scanf("%d", &codigo);
+    for (i=0; i<m; i++) {
+        scanf("%d", &cod);
         scanf("%d", &qtd);
-
-        for (int j = 0; j < n; j++) {
-            if (produtos[j].codigo == codigo) {
-                existe = 1;
-            }
-        }
-
-        if (existe == 0) {
-            continue;
-        }
-
-        for (int j = 0; j < quantidade; j++) {
-            if (carrinho[j].codigo == codigo) {
-                carrinho[j].quantidade += qtd;
-                ja_tem = 1;
-            }
-        }
-
-        if (ja_tem == 0) {
-            carrinho[quantidade].codigo = codigo;
-            carrinho[quantidade].quantidade = qtd;
-            quantidade++;
+        if (buscaProduto(produtos, n, cod) >= 0) {
+            k = adicionaItem(carrinho, k, cod, qtd);
         }
     }
-
-    for (int i = 0; i < quantidade; i++) {
-        for (int j = 0; j < n; j++) {
-            if (produtos[j].codigo == carrinho[i].codigo) {
-
-                float subtotal = produtos[j].preco * carrinho[i].quantidade;
-                total += subtotal;
-
-                printf("%s - %d - %.2f\n", produtos[j].nome, carrinho[i].quantidade, subtotal);
-                break;
-            }
-        }
+    for (i=0; i<k; i++) {
+        int p = buscaProduto(produtos, n, carrinho[i].codigo);
+        float subtotal = produtos[p].preco * carrinho[i].quantidade;
+        total += subtotal;
+        printf("%s - %d - %.2f\n", produtos[p].nome, carrinho[i].quantidade, subtotal);
     }
-
     printf("Total: %.2f\n", total);
-
     return 0;
 }

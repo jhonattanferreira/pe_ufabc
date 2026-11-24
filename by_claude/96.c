@@ -1,73 +1,39 @@
 #include <stdio.h>
-
-struct tComplex {
-    int real;
-    int imaginario;
-};
-
-struct tComplex complexo(int a, int b) {
-
-    struct tComplex c;
-
-    c.real = a;
-    c.imaginario = b;
-
+typedef struct tComplexo {
+    int real, imag;
+} Complexo;
+Complexo complexo(int a, int b) {
+    Complexo c;
+    c.real = a; c.imag = b;
     return c;
 }
-
-struct tComplex soma(struct tComplex x, struct tComplex y) {
-
-    return complexo(x.real + y.real, x.imaginario + y.imaginario);
+Complexo soma(Complexo x, Complexo y) {
+    return complexo(x.real + y.real, x.imag + y.imag);
 }
-
-struct tComplex subtrai(struct tComplex x, struct tComplex y) {
-
-    return complexo(x.real - y.real, x.imaginario - y.imaginario);
+Complexo subtrai(Complexo x, Complexo y) {
+    return complexo(x.real - y.real, x.imag - y.imag);
 }
-
-struct tComplex multiplica(struct tComplex x, struct tComplex y) {
-
-    int real = x.real * y.real - x.imaginario * y.imaginario;
-    int imaginario = x.real * y.imaginario + x.imaginario * y.real;
-
-    return complexo(real, imaginario);
+Complexo multiplica(Complexo x, Complexo y) {
+    return complexo(x.real * y.real - x.imag * y.imag, x.real * y.imag + x.imag * y.real);
 }
-
-struct tComplex divide(struct tComplex x, struct tComplex y) {
-
-    int divisor = y.real * y.real + y.imaginario * y.imaginario;
-    int real = (x.real * y.real + x.imaginario * y.imaginario) / divisor;
-    int imaginario = (x.imaginario * y.real - x.real * y.imaginario) / divisor;
-
-    return complexo(real, imaginario);
+Complexo divide(Complexo x, Complexo y) {
+    int d = y.real * y.real + y.imag * y.imag;
+    return complexo((x.real * y.real + x.imag * y.imag) / d, (x.imag * y.real - x.real * y.imag) / d);
 }
-
-int main() {
-
-    int a = 0;
-    int b = 0;
-    int c = 0;
-    int d = 0;
-    char operacao;
-
-    while (scanf("%d %di %c %d %di", &a, &b, &operacao, &c, &d) != EOF) {
-
-        struct tComplex x = complexo(a, b);
-        struct tComplex y = complexo(c, d);
-        struct tComplex result;
-
-        if (operacao == '+') {
-            result = soma(x, y);
-        } else if (operacao == '-') {
-            result = subtrai(x, y);
-        } else if (operacao == '*') {
-            result = multiplica(x, y);
-        } else {
-            result = divide(x, y);
+int main()
+{
+    int a, b, c, d;
+    char op;
+    while (scanf("%d %di %c %d %di", &a, &b, &op, &c, &d) != EOF) {
+        Complexo x = complexo(a, b), y = complexo(c, d);
+        Complexo r;
+        switch (op) {
+            case '+': r = soma(x, y); break;
+            case '-': r = subtrai(x, y); break;
+            case '*': r = multiplica(x, y); break;
+            default: r = divide(x, y); break;
         }
-
-        printf("%d %di\n", result.real, result.imaginario);
+        printf("%d %di\n", r.real, r.imag);
     }
-
     return 0;
 }

@@ -1,31 +1,32 @@
 #include <stdio.h>
-
-int main() {
-
-    int n = 0;
-    int m = 0;
-
+#include <stdlib.h>
+int somaLinha(int *linha, int m) {
+    int j, soma=0;
+    for (j=0; j<m; j++) {
+        soma = soma + linha[j];
+    }
+    return soma;
+}
+int main()
+{
+    int i, j, n, m;
     scanf("%d", &n);
     scanf("%d", &m);
-
-    int matriz[n][m];
-
-    for (int i = 0; i < n; i++) {
-        for (int j = 0; j < m; j++) {
-            scanf("%d", &matriz[i][j]);
+    int **mat = malloc(sizeof(int *) * n);
+    for (i=0; i<n; i++) {
+        mat[i] = malloc(sizeof(int) * m);
+    }
+    for (i=0; i<n; i++) {
+        for (j=0; j<m; j++) {
+            scanf("%d", &mat[i][j]);
         }
     }
-
-    for (int i = 0; i < n; i++) {
-
-        int soma = 0;
-
-        for (int j = 0; j < m; j++) {
-            soma += matriz[i][j];
-        }
-
-        printf("%d\n", soma);
+    for (i=0; i<n; i++) {
+        printf("%d\n", somaLinha(mat[i], m));
     }
-
+    for (i=0; i<n; i++) {
+        free(mat[i]);
+    }
+    free(mat);
     return 0;
 }

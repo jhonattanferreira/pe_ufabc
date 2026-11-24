@@ -1,42 +1,32 @@
-#include <stdbool.h>
 #include <stdio.h>
-
-int main() {
-
-    int n = 0;
-    bool tem_duplicado = false;
-
+#include <stdlib.h>
+int repetiu(int *v, int i) {
+    int j;
+    for (j=0; j<i; j++) {
+        if (v[j] == v[i]) { return 1; }
+    }
+    return 0;
+}
+int frequencia(int *v, int n, int x) {
+    int j, freq=0;
+    for (j=0; j<n; j++) {
+        if (v[j] == x) { freq++; }
+    }
+    return freq;
+}
+int main()
+{
+    int i, n;
     scanf("%d", &n);
-
-    int vetorA[n];
-
-    for (int i = 0; i < n; i++) {
-        scanf("%d", &vetorA[i]);
+    int *v = malloc(sizeof(int) * n);
+    for (i=0; i<n; i++) {
+        scanf("%d", &v[i]);
     }
-
-    for (int i = 0; i < n; i++) {
-
-        tem_duplicado = false;
-
-        for (int j = i - 1; j >= 0; j--) {
-            if (vetorA[j] == vetorA[i]) {
-                tem_duplicado = true;
-            }
-        }
-
-        if (tem_duplicado == false) {
-
-            int frequencia = 0;
-
-            for (int j = 0; j < n; j++) {
-                if (vetorA[i] == vetorA[j]) {
-                    frequencia++;
-                }
-            }
-
-            printf("%d %d\n", vetorA[i], frequencia);
+    for (i=0; i<n; i++) {
+        if (!repetiu(v, i)) {
+            printf("%d %d\n", v[i], frequencia(v, n, v[i]));
         }
     }
-
+    free(v);
     return 0;
 }
