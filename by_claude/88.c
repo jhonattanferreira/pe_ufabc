@@ -1,48 +1,83 @@
 #include <stdio.h>
+
 typedef struct tProduto {
     char nome[100];
     int codigo;
     float preco;
     int quantidade;
 } Produto;
-float calculaTotal(Produto *v, int n) {
-    int i;
+
+float calcularTotal(Produto *produtos, int n) {
+
     float total = 0;
-    for (i=0; i<n; i++) { total += v[i].preco * v[i].quantidade; }
+
+    for (int i = 0; i < n; i++) {
+        total += produtos[i].preco * produtos[i].quantidade;
+    }
+
     return total;
 }
-int buscaMaisCaro(Produto *v, int n) {
-    int i, maisCaro=0;
-    for (i=1; i<n; i++) {
-        if (v[i].preco > v[maisCaro].preco) { maisCaro = i; }
+
+int buscarMaior(Produto *produtos, int n) {
+
+    int maior = 0;
+
+    for (int i = 1; i < n; i++) {
+        if (produtos[i].preco > produtos[maior].preco) {
+            maior = i;
+        }
     }
-    return maisCaro;
+
+    return maior;
 }
-int buscaCodigo(Produto *v, int n, int cod) {
-    int i;
-    for (i=0; i<n; i++) {
-        if (v[i].codigo == cod) { return i; }
+
+int buscarCodigo(Produto *produtos, int n, int busca) {
+
+    for (int i = 0; i < n; i++) {
+        if (produtos[i].codigo == busca) {
+            return i;
+        }
     }
+
     return -1;
 }
-int main()
-{
-    int i, n, busca;
-    Produto produtos[1000];
+
+int main() {
+
+    int n = 0;
+    int busca = 0;
+    int encontrado = -1;
+    int maior = 0;
+    float total = 0;
+
     scanf("%d", &n);
-    for (i=0; i<n; i++) {
+
+    Produto produtos[n];
+
+    for (int i = 0; i < n; i++) {
         scanf("%s", produtos[i].nome);
         scanf("%d", &produtos[i].codigo);
         scanf("%f", &produtos[i].preco);
         scanf("%d", &produtos[i].quantidade);
     }
+
     scanf("%d", &busca);
-    printf("Total: %.2f\n", calculaTotal(produtos, n));
-    i = buscaMaisCaro(produtos, n);
-    printf("Mais caro: %s - %.2f\n", produtos[i].nome, produtos[i].preco);
-    i = buscaCodigo(produtos, n, busca);
-    if (i >= 0) {
-        printf("Encontrado: %s - %d - %.2f - %d\n", produtos[i].nome, produtos[i].codigo, produtos[i].preco, produtos[i].quantidade);
-    } else { printf("Produto nao encontrado\n"); }
+
+    total = calcularTotal(produtos, n);
+
+    printf("Total: %.2f\n", total);
+
+    maior = buscarMaior(produtos, n);
+
+    printf("Mais caro: %s - %.2f\n", produtos[maior].nome, produtos[maior].preco);
+
+    encontrado = buscarCodigo(produtos, n, busca);
+
+    if (encontrado != -1) {
+        printf("Encontrado: %s - %d - %.2f - %d\n", produtos[encontrado].nome, produtos[encontrado].codigo, produtos[encontrado].preco, produtos[encontrado].quantidade);
+    } else {
+        printf("Produto nao encontrado\n");
+    }
+
     return 0;
 }

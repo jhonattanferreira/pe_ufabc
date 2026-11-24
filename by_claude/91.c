@@ -1,54 +1,113 @@
 #include <stdio.h>
-#include <stdlib.h>
+
 typedef struct tRacional {
-    int num, denom;
+    int numerador;
+    int denominador;
 } Racional;
-Racional racional(int n, int d) {
-    Racional r;
-    r.num = n; r.denom = d;
-    return r;
-}
-Racional soma(Racional r1, Racional r2) {
-    return racional(r1.num * r2.denom + r2.num * r1.denom, r1.denom * r2.denom);
-}
-Racional negativo(Racional r) {
-    r.num = -r.num;
-    return r;
-}
-Racional multiplica(Racional r1, Racional r2) {
-    return racional(r1.num * r2.num, r1.denom * r2.denom);
-}
-Racional divide(Racional r1, Racional r2) {
-    return racional(r1.num * r2.denom, r1.denom * r2.num);
-}
+
 int mdc(int a, int b) {
-    if (b == 0) { return a; }
+
+    if (b == 0) {
+        return a;
+    }
+
     return mdc(b, a % b);
 }
-Racional reduz(Racional r) {
-    int m = mdc(abs(r.num), abs(r.denom));
-    r.num /= m;
-    r.denom /= m;
-    if (r.denom < 0) {
-        r.num = -r.num; r.denom = -r.denom;
-    }
+
+Racional racional(int numerador, int denominador) {
+
+    Racional r;
+
+    r.numerador = numerador;
+    r.denominador = denominador;
+
     return r;
 }
-int main()
-{
-    int n1, d1, n2, d2;
-    char op;
-    while (scanf("%d %d %c %d %d", &n1, &d1, &op, &n2, &d2) != EOF) {
-        Racional r1 = racional(n1, d1), r2 = racional(n2, d2);
-        Racional r;
-        switch (op) {
-            case '+': r = soma(r1, r2); break;
-            case '-': r = soma(r1, negativo(r2)); break;
-            case '*': r = multiplica(r1, r2); break;
-            default: r = divide(r1, r2); break;
-        }
-        r = reduz(r);
-        printf("%d %d\n", r.num, r.denom);
+
+Racional negativo(Racional r) {
+
+    return racional(-r.numerador, r.denominador);
+}
+
+Racional soma(Racional a, Racional b) {
+
+    int numerador = a.numerador * b.denominador + b.numerador * a.denominador;
+    int denominador = a.denominador * b.denominador;
+
+    return racional(numerador, denominador);
+}
+
+Racional multiplica(Racional a, Racional b) {
+
+    int numerador = a.numerador * b.numerador;
+    int denominador = a.denominador * b.denominador;
+
+    return racional(numerador, denominador);
+}
+
+Racional divide(Racional a, Racional b) {
+
+    int numerador = a.numerador * b.denominador;
+    int denominador = a.denominador * b.numerador;
+
+    return racional(numerador, denominador);
+}
+
+Racional reduz(Racional r) {
+
+    if (r.denominador < 0) {
+        r.numerador = -r.numerador;
+        r.denominador = -r.denominador;
     }
+
+    int a = r.numerador;
+    int b = r.denominador;
+
+    if (a < 0) {
+        a = -a;
+    }
+
+    int divisor = mdc(a, b);
+
+    r.numerador = r.numerador / divisor;
+    r.denominador = r.denominador / divisor;
+
+    return r;
+}
+
+int main() {
+
+    int n1 = 0;
+    int d1 = 0;
+    int n2 = 0;
+    int d2 = 0;
+    char operacao;
+
+    while (scanf("%d %d %c %d %d", &n1, &d1, &operacao, &n2, &d2) != EOF) {
+
+        Racional a = racional(n1, d1);
+        Racional b = racional(n2, d2);
+        Racional result;
+
+        switch (operacao) {
+            case '+':
+                result = soma(a, b);
+                break;
+            case '-':
+                result = soma(a, negativo(b));
+                break;
+            case '*':
+                result = multiplica(a, b);
+                break;
+            default:
+                result = divide(a, b);
+                break;
+        }
+
+        result = reduz(result);
+
+        printf("%d %d\n", result.numerador, result.denominador);
+    }
+
     return 0;
 }

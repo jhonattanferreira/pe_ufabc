@@ -1,35 +1,57 @@
 #include <stdio.h>
 #include <stdlib.h>
-void troca(int *v, int i, int j) {
-    int aux = v[i];
-    v[i] = v[j];
-    v[j] = aux;
+
+void trocar(int *vetor, int i, int j) {
+
+    int aux = vetor[i];
+    vetor[i] = vetor[j];
+    vetor[j] = aux;
 }
-int particiona(int *v, int n, int p) {
-    int i, posicao=0;
-    troca(v, p, n-1);
-    for (i=0; i<n-1; i++) {
-        if (v[i] <= v[n-1]) {
-            troca(v, i, posicao); posicao++;
+
+int particionar(int *vetor, int n, int p) {
+
+    int posicao = 0;
+
+    trocar(vetor, p, n - 1);
+
+    int pivo = vetor[n - 1];
+
+    for (int i = 0; i < n - 1; i++) {
+        if (vetor[i] <= pivo) {
+            trocar(vetor, i, posicao);
+            posicao++;
         }
     }
-    troca(v, posicao, n-1);
+
+    trocar(vetor, posicao, n - 1);
+
     return posicao;
 }
-int main()
-{
-    int i, n, p;
+
+int main() {
+
+    int n = 0;
+    int p = 0;
+    int result = 0;
+
     scanf("%d", &n);
     scanf("%d", &p);
-    int *v = malloc(sizeof(int) * n);
-    for (i=0; i<n; i++) {
-        scanf("%d", &v[i]);
+
+    int *vetor = malloc(sizeof(int) * n);
+
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &vetor[i]);
     }
-    printf("%d\n", particiona(v, n, p));
-    for (i=0; i<n; i++) {
-        printf("%d ", v[i]);
+
+    result = particionar(vetor, n, p);
+
+    printf("%d\n", result);
+
+    for (int i = 0; i < n; i++) {
+        printf("%d ", vetor[i]);
     }
-    printf("\n");
-    free(v);
+
+    free(vetor);
+
     return 0;
 }

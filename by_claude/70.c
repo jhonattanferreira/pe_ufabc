@@ -1,78 +1,125 @@
 #include <stdio.h>
 #include <stdlib.h>
-int **alocaMatriz(int n, int m) {
-    int i;
-    int **mat = malloc(sizeof(int *) * n);
-    for (i=0; i<n; i++) {
-        mat[i] = malloc(sizeof(int) * m);
+
+int **alocarMatriz(int n, int m) {
+
+    int **matriz = malloc(sizeof(int *) * n);
+
+    for (int i = 0; i < n; i++) {
+        matriz[i] = malloc(sizeof(int) * m);
     }
-    return mat;
+
+    return matriz;
 }
-void liberaMatriz(int **mat, int n) {
-    int i;
-    for (i=0; i<n; i++) {
-        free(mat[i]);
+
+void liberarMatriz(int **matriz, int n) {
+
+    for (int i = 0; i < n; i++) {
+        free(matriz[i]);
     }
-    free(mat);
+
+    free(matriz);
 }
+
 int vizinhoPintado(int **pintado, int n, int m, int i, int j) {
-    if (i > 0 && pintado[i-1][j]) { return 1; }
-    if (i < n-1 && pintado[i+1][j]) { return 1; }
-    if (j > 0 && pintado[i][j-1]) { return 1; }
-    if (j < m-1 && pintado[i][j+1]) { return 1; }
+
+    if (i > 0 && pintado[i - 1][j] == 1) {
+        return 1;
+    }
+
+    if (i < n - 1 && pintado[i + 1][j] == 1) {
+        return 1;
+    }
+
+    if (j > 0 && pintado[i][j - 1] == 1) {
+        return 1;
+    }
+
+    if (j < m - 1 && pintado[i][j + 1] == 1) {
+        return 1;
+    }
+
     return 0;
 }
-void marcaRegiao(int **mat, int **pintado, int n, int m, int x, int y) {
-    int i, j, mudou=1, antigo=mat[x][y];
+
+void marcarRegiao(int **matriz, int **pintado, int n, int m, int x, int y) {
+
+    int antigo = matriz[x][y];
+    int mudou = 1;
+
     pintado[x][y] = 1;
-    while (mudou) {
+
+    while (mudou == 1) {
+
         mudou = 0;
-        for (i=0; i<n; i++) {
-            for (j=0; j<m; j++) {
-                if (mat[i][j] == antigo && !pintado[i][j] && vizinhoPintado(pintado, n, m, i, j)) {
-                    pintado[i][j] = 1; mudou = 1;
+
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                if (matriz[i][j] == antigo && pintado[i][j] == 0 && vizinhoPintado(pintado, n, m, i, j) == 1) {
+                    pintado[i][j] = 1;
+                    mudou = 1;
                 }
             }
         }
     }
 }
-void floodFill(int **mat, int n, int m, int x, int y, int novo) {
-    int i, j;
-    int **pintado = alocaMatriz(n, m);
-    for (i=0; i<n; i++) {
-        for (j=0; j<m; j++) {
+
+void floodFill(int **matriz, int n, int m, int x, int y, int novo) {
+
+    int **pintado = alocarMatriz(n, m);
+
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < m; j++) {
             pintado[i][j] = 0;
         }
     }
-    marcaRegiao(mat, pintado, n, m, x, y);
-    for (i=0; i<n; i++) {
-        for (j=0; j<m; j++) {
-            if (pintado[i][j]) { mat[i][j] = novo; }
+
+    marcarRegiao(matriz, pintado, n, m, x, y);
+
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < m; j++) {
+            if (pintado[i][j] == 1) {
+                matriz[i][j] = novo;
+            }
         }
     }
-    liberaMatriz(pintado, n);
+
+    liberarMatriz(pintado, n);
 }
-int main()
-{
-    int i, j, n, m, x, y, novo;
+
+int main() {
+
+    int n = 0;
+    int m = 0;
+    int x = 0;
+    int y = 0;
+    int novo = 0;
+
     scanf("%d", &n);
     scanf("%d", &m);
-    int **mat = alocaMatriz(n, m);
-    for (i=0; i<n; i++) {
-        for (j=0; j<m; j++) {
-            scanf("%d", &mat[i][j]);
+
+    int **matriz = alocarMatriz(n, m);
+
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < m; j++) {
+            scanf("%d", &matriz[i][j]);
         }
     }
+
     scanf("%d", &x);
     scanf("%d", &y);
     scanf("%d", &novo);
-    floodFill(mat, n, m, x, y, novo);
-    for (i=0; i<n; i++) {
-        for (j=0; j<m; j++) {
-            printf("%d ", mat[i][j]);
+
+    floodFill(matriz, n, m, x, y, novo);
+
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < m; j++) {
+            printf("%d ", matriz[i][j]);
         }
         printf("\n");
     }
-    liberaMatriz(mat, n);
+
+    liberarMatriz(matriz, n);
+
     return 0;
 }

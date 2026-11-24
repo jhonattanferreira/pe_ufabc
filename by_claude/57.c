@@ -1,32 +1,43 @@
 #include <stdio.h>
 #include <stdlib.h>
-void imprimeTransposta(int **mat, int n, int m) {
-    int i, j;
-    for (j=0; j<m; j++) {
-        for (i=0; i<n; i++) {
-            printf("%d ", mat[i][j]);
+
+void imprimirTransposta(int **matriz, int n, int m) {
+
+    for (int j = 0; j < m; j++) {
+        for (int i = 0; i < n; i++) {
+            printf("%d ", matriz[i][j]);
         }
         printf("\n");
     }
 }
-int main()
-{
-    int i, j, n, m;
+
+int main() {
+
+    int n = 0;
+    int m = 0;
+
     scanf("%d", &n);
     scanf("%d", &m);
-    int **mat = malloc(sizeof(int *) * n);
-    for (i=0; i<n; i++) {
-        mat[i] = malloc(sizeof(int) * m);
+
+    int **matriz = malloc(sizeof(int *) * n);
+
+    for (int i = 0; i < n; i++) {
+        matriz[i] = malloc(sizeof(int) * m);
     }
-    for (i=0; i<n; i++) {
-        for (j=0; j<m; j++) {
-            scanf("%d", &mat[i][j]);
+
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < m; j++) {
+            scanf("%d", &matriz[i][j]);
         }
     }
-    imprimeTransposta(mat, n, m);
-    for (i=0; i<n; i++) {
-        free(mat[i]);
+
+    imprimirTransposta(matriz, n, m);
+
+    for (int i = 0; i < n; i++) {
+        free(matriz[i]);
     }
-    free(mat);
+
+    free(matriz);
+
     return 0;
 }

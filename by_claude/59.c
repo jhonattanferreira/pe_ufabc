@@ -1,33 +1,52 @@
 #include <stdio.h>
 #include <stdlib.h>
-int ehIdentidade(int **mat, int n) {
-    int i, j;
-    for (i=0; i<n; i++) {
-        for (j=0; j<n; j++) {
-            if (i == j && mat[i][j] != 1) { return 0; }
-            if (i != j && mat[i][j] != 0) { return 0; }
+
+int ehIdentidade(int **matriz, int n) {
+
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            if (i == j && matriz[i][j] != 1) {
+                return 0;
+            }
+
+            if (i != j && matriz[i][j] != 0) {
+                return 0;
+            }
         }
     }
+
     return 1;
 }
-int main()
-{
-    int i, j, n;
+
+int main() {
+
+    int n = 0;
+
     scanf("%d", &n);
-    int **mat = malloc(sizeof(int *) * n);
-    for (i=0; i<n; i++) {
-        mat[i] = malloc(sizeof(int) * n);
+
+    int **matriz = malloc(sizeof(int *) * n);
+
+    for (int i = 0; i < n; i++) {
+        matriz[i] = malloc(sizeof(int) * n);
     }
-    for (i=0; i<n; i++) {
-        for (j=0; j<n; j++) {
-            scanf("%d", &mat[i][j]);
+
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            scanf("%d", &matriz[i][j]);
         }
     }
-    if (ehIdentidade(mat, n)) { printf("SIM\n"); }
-    else { printf("NAO\n"); }
-    for (i=0; i<n; i++) {
-        free(mat[i]);
+
+    if (ehIdentidade(matriz, n) == 1) {
+        printf("SIM");
+    } else {
+        printf("NAO");
     }
-    free(mat);
+
+    for (int i = 0; i < n; i++) {
+        free(matriz[i]);
+    }
+
+    free(matriz);
+
     return 0;
 }

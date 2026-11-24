@@ -1,49 +1,66 @@
 #include <stdio.h>
 #include <stdlib.h>
-int **alocaMatriz(int n, int m) {
-    int i;
-    int **mat = malloc(sizeof(int *) * n);
-    for (i=0; i<n; i++) {
-        mat[i] = malloc(sizeof(int) * m);
+
+int **alocarMatriz(int n, int m) {
+
+    int **matriz = malloc(sizeof(int *) * n);
+
+    for (int i = 0; i < n; i++) {
+        matriz[i] = malloc(sizeof(int) * m);
     }
-    return mat;
+
+    return matriz;
 }
-void liberaMatriz(int **mat, int n) {
-    int i;
-    for (i=0; i<n; i++) {
-        free(mat[i]);
+
+void liberarMatriz(int **matriz, int n) {
+
+    for (int i = 0; i < n; i++) {
+        free(matriz[i]);
     }
-    free(mat);
+
+    free(matriz);
 }
-int **rotaciona(int **mat, int n, int m) {
-    int i, j;
-    int **rot = alocaMatriz(m, n);
-    for (i=0; i<n; i++) {
-        for (j=0; j<m; j++) {
-            rot[j][n-1-i] = mat[i][j];
+
+int **rotacionar(int **matriz, int n, int m) {
+
+    int **rotacionada = alocarMatriz(m, n);
+
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < m; j++) {
+            rotacionada[j][n - 1 - i] = matriz[i][j];
         }
     }
-    return rot;
+
+    return rotacionada;
 }
-int main()
-{
-    int i, j, n, m;
+
+int main() {
+
+    int n = 0;
+    int m = 0;
+
     scanf("%d", &n);
     scanf("%d", &m);
-    int **mat = alocaMatriz(n, m);
-    for (i=0; i<n; i++) {
-        for (j=0; j<m; j++) {
-            scanf("%d", &mat[i][j]);
+
+    int **matriz = alocarMatriz(n, m);
+
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < m; j++) {
+            scanf("%d", &matriz[i][j]);
         }
     }
-    int **rot = rotaciona(mat, n, m);
-    for (i=0; i<m; i++) {
-        for (j=0; j<n; j++) {
-            printf("%d ", rot[i][j]);
+
+    int **rotacionada = rotacionar(matriz, n, m);
+
+    for (int i = 0; i < m; i++) {
+        for (int j = 0; j < n; j++) {
+            printf("%d ", rotacionada[i][j]);
         }
         printf("\n");
     }
-    liberaMatriz(mat, n);
-    liberaMatriz(rot, m);
+
+    liberarMatriz(matriz, n);
+    liberarMatriz(rotacionada, m);
+
     return 0;
 }
